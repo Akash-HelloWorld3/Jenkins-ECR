@@ -15,7 +15,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                 app = docker.build("jenkins-test")
+                 app = docker.build("jenkins")
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                        docker.withRegistry('https://859924316272.dkr.ecr.us-east-1.amazonaws.com/', 'ecr:us-east-1:jenkins-test') {
+                        docker.withRegistry('https://698512717870.dkr.ecr.us-east-1.amazonaws.com/', 'ecr:us-east-1:jenkins') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
