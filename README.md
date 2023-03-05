@@ -45,5 +45,3 @@ Report an issue with this plugin
 
 Pipeline: GitHub
 Version2.8-138.d766e30bb08b
-
-Done.
